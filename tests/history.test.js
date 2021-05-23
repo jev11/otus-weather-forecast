@@ -34,14 +34,14 @@ describe("loadHistory", () => {
     expect(loadHistory).toBeInstanceOf(Function);
   });
 
-  it("returns an empty array when there is no data stored in local storage", () => {
+  it("returns an empty array when local storage is empty", () => {
     jest
       .spyOn(Object.getPrototypeOf(window.localStorage), "getItem")
       .mockImplementation(() => null);
     expect(loadHistory()).toStrictEqual([]);
   });
 
-  it("returns array of cities when there is data stored in local storage", () => {
+  it("returns array of cities when local storage contains data", () => {
     jest
       .spyOn(Object.getPrototypeOf(window.localStorage), "getItem")
       .mockImplementation(() => `["Moscow","Ekaterinburg"]`);
