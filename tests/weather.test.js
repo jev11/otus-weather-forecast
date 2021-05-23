@@ -100,6 +100,6 @@ describe("getWeather", () => {
     global.fetch = jest.fn(() =>
       Promise.reject(new Error("something bad happened"))
     );
-    expect(await getWeather("Moscow", "abc")).toEqual(null);
+    expect(await getWeather("Moscow", "abc")).toBeNull();
   });
 });
