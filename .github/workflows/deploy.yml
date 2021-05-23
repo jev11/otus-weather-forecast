@@ -10,9 +10,7 @@ jobs:
       - name: Install and Build
         run: |
           npm install
-          npx webpack --mode=production /
-          --env OPEN_WEATHER_KEY=secrets.OPEN_WEATHER_KEY /
-          --env GOOGLE_MAPS_KEY=secrets.GOOGLE_MAPS_KEY
+          npx webpack --mode=production --env OPEN_WEATHER_KEY=secrets.OPEN_WEATHER_KEY --env GOOGLE_MAPS_KEY=secrets.GOOGLE_MAPS_KEY
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.3
