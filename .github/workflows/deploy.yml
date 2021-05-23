@@ -9,8 +9,8 @@ jobs:
 
       - name: Install and Build
         env:
-          OPEN_WEATHER_KEY: secrets.OPEN_WEATHER_KEY
-          GOOGLE_MAPS_KEY: secrets.GOOGLE_MAPS_KEY
+          OPEN_WEATHER_KEY: ${{ secrets.OPEN_WEATHER_KEY }}
+          GOOGLE_MAPS_KEY: ${{ secrets.GOOGLE_MAPS_KEY }}
         run: |
           npm install
           npm run build
