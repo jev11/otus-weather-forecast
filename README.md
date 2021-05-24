@@ -2,8 +2,20 @@
 
 # Otus JS basic course - Weather App homework
 
+## How to build and deploy
+
+Make sure two en variables are present during the build process:
+
+```bash
+export OPEN_WEATHER_KEY=
+export GOOGLE_MAPS_KEY=
+```
+
+Run `npm run build` and copy dist folder to a required location.
+
 ## Project structure
 
+```
 .
 ├── README.md
 ├── babel.config.js
@@ -25,3 +37,4 @@
 │   ├── location.test.js
 │   └── weather.test.js
 └── webpack.config.js
+```
