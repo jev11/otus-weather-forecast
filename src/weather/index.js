@@ -5,7 +5,7 @@ export function drawWeather(el, weatherInfo) {
     ${weatherInfo.name}
     </span>
     <span>
-    <img src=http://openweathermap.org/img/wn/${
+    <img src=https://openweathermap.org/img/wn/${
       weatherInfo.weather[0].icon
     }.png>
     </span>
