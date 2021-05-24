@@ -1,3 +1,5 @@
+![Build and Deploy](https://github.com/jev11/otus-weather-forecast/actions/workflows/deploy.yml/badge.svg)
+
 # Otus JS basic course - Weather App homework
 
 ## Project structure
