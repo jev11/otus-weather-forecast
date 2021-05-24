@@ -20,8 +20,11 @@ export async function getWeather(cityName, key) {
     const url = `https://api.openweathermap.org/
 data/2.5/weather?units=metric&q=${cityName}&appid=${key}`;
     const result = await fetch(url);
-    const data = await result.json();
-    return data;
+    if (result.ok) {
+      const data = await result.json();
+      return data;
+    }
+    return null;
   } catch (e) {
     return null;
   }
