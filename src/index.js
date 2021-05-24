@@ -44,13 +44,14 @@ let weather;
 button.addEventListener("click", async (ev) => {
   ev.preventDefault();
 
-  keepHistory(input.value, citiesList);
-
   weather = await getWeather(input.value, owKey);
+  if (weather) {
+    keepHistory(input.value, citiesList);
+    drawWeather(forecastEl, weather);
+    drawMap(mapEl, weather.coord.lat, weather.coord.lon, gmKey);
+    drawHistory(historyEl, citiesList);
+  }
   input.value = "";
-  drawWeather(forecastEl, weather);
-  drawMap(mapEl, weather.coord.lat, weather.coord.lon, gmKey);
-  drawHistory(historyEl, citiesList);
 
   historyEl.querySelectorAll(".city").forEach((item) => {
     item.addEventListener("click", async () => {
