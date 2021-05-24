@@ -4,7 +4,7 @@
 
 ## How to build and deploy
 
-Make sure two en variables are present during the build process:
+Make sure two environment variables are present during the build process:
 
 ```bash
 export OPEN_WEATHER_KEY=
