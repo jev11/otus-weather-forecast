@@ -16,6 +16,13 @@ describe("getCurrentLocation", () => {
       expect(data).toMatchObject(reply);
     });
   });
+
+  it("returns null if exception occurs", async () => {
+    global.fetch = jest.fn(() =>
+      Promise.reject(new Error("something bad happened"))
+    );
+    expect(await getCurrentLocation()).toBeNull();
+  });
 });
 
 describe("drawMap", () => {

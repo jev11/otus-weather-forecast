@@ -1,10 +1,13 @@
-export function getCurrentLocation(
+export async function getCurrentLocation(
   url = "https://get.geojs.io/v1/ip/geo.json"
 ) {
-  const location = fetch(url)
-    .then((response) => response.json())
-    .then((data) => data);
-  return location;
+  try {
+    const result = await fetch(url);
+    const data = await result.json();
+    return data;
+  } catch (e) {
+    return null;
+  }
 }
 
 export function drawMap(el, lat, lon, key) {

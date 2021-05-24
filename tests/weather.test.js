@@ -96,7 +96,6 @@ describe("getWeather", () => {
   });
 
   it("returns null if exception occurs", async () => {
-    // global.fetch = jest.fn(() => Promise.reject());
     global.fetch = jest.fn(() =>
       Promise.reject(new Error("something bad happened"))
     );
