@@ -69,7 +69,7 @@ describe("drawWeather", () => {
     Moscow
     </span>
     <span>
-    <img src="http://openweathermap.org/img/wn/10d.png">
+    <img src="https://openweathermap.org/img/wn/10d.png">
     </span>
     <span>
     Temperature: 16C
