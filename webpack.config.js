@@ -7,6 +7,11 @@ module.exports = {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
   },
+  devServer: {
+    contentBase: path.join(__dirname, "dist"),
+    compress: true,
+    port: 9000,
+  },
   plugins: [
     new webpack.DefinePlugin({
       "process.env.OPEN_WEATHER_KEY": JSON.stringify(
