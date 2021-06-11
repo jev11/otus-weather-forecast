@@ -30,15 +30,13 @@ let weather;
 
   citiesList = await loadHistory();
   drawHistory(historyEl, citiesList);
-  historyEl.querySelectorAll(".city").forEach((item) => {
-    item.addEventListener("click", async () => {
-      weather = await getWeather(item.innerHTML, owKey);
-      if (weather) {
-        drawWeather(forecastEl, weather);
-        drawMap(mapEl, weather.coord.lat, weather.coord.lon, gmKey);
-      }
-    });
-  });
+  historyEl.onclick = async function delegateEventonHistoryEl(event) {
+    weather = await getWeather(event.target.innerHTML, owKey);
+    if (weather) {
+      drawWeather(forecastEl, weather);
+      drawMap(mapEl, weather.coord.lat, weather.coord.lon, gmKey);
+    }
+  };
 })();
 
 button.addEventListener("click", async (ev) => {
@@ -52,16 +50,6 @@ button.addEventListener("click", async (ev) => {
     drawHistory(historyEl, citiesList);
   }
   input.value = "";
-
-  historyEl.querySelectorAll(".city").forEach((item) => {
-    item.addEventListener("click", async () => {
-      weather = await getWeather(item.innerHTML, owKey);
-      if (weather) {
-        drawWeather(forecastEl, weather);
-        drawMap(mapEl, weather.coord.lat, weather.coord.lon, gmKey);
-      }
-    });
-  });
 
   saveHistory(citiesList);
 });

@@ -13,6 +13,9 @@ module.exports = {
     compress: true,
     port: 9000,
   },
+  optimization: {
+    minimize: false,
+  },
   plugins: [
     new webpack.DefinePlugin({
       "process.env.OPEN_WEATHER_KEY": JSON.stringify(
