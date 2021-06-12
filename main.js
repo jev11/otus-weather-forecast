@@ -96,8 +96,8 @@ const owKey = "69c7e4c421845cddf495f67b63f6cc51";
 const gmKey = "AIzaSyC9RYvd4Srwv8p0dEjkPUnHPRrKouz5lfQ";
 
 const historyEl = document.querySelector(".history");
-const input = document.querySelector("input");
-const src_button = document.querySelector("button");
+const cityInput = document.querySelector("input");
+const searchCityButton = document.querySelector("button");
 const forecastEl = document.querySelector(".forecast");
 const mapEl = document.querySelector(".map");
 
@@ -122,17 +122,17 @@ let weather;
   };
 })();
 
-src_button.addEventListener("click", async (ev) => {
+searchCityButton.addEventListener("click", async (ev) => {
   ev.preventDefault();
 
-  weather = await getWeather(input.value, owKey);
+  weather = await getWeather(cityInput.value, owKey);
   if (weather) {
-    keepHistory(input.value, citiesList);
+    keepHistory(cityInput.value, citiesList);
     drawWeather(forecastEl, weather);
     drawMap(mapEl, weather.coord.lat, weather.coord.lon, gmKey);
     drawHistory(historyEl, citiesList);
   }
-  input.value = "";
+  cityInput.value = "";
 
   saveHistory(citiesList);
 });
