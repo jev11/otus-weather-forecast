@@ -31,16 +31,25 @@ function keepHistory(city, list) {
   }
 }
 
+;// CONCATENATED MODULE: ./src/config/index.js
+const config = {
+  googleMapsURL: "maps.googleapis.com",
+  geojsURL: "get.geojs.io",
+  openWeatherURL: "openweathermap.org",
+};
+
 ;// CONCATENATED MODULE: ./src/weather/index.js
+
+
 function drawWeather(el, weatherInfo) {
   el.innerHTML = `<div>
     <span>
     ${weatherInfo.name}
     </span>
     <span>
-    <img src=https://openweathermap.org/img/wn/${
-      weatherInfo.weather[0].icon
-    }.png>
+    <img src=https://${config.openWeatherURL}/img/wn/${
+    weatherInfo.weather[0].icon
+  }.png>
     </span>
     <span>
     Temperature: ${Math.round(weatherInfo.main.temp)}C
@@ -50,7 +59,7 @@ function drawWeather(el, weatherInfo) {
 
 async function getWeather(cityName, key) {
   try {
-    const url = `https://api.openweathermap.org/
+    const url = `https://api.${config.openWeatherURL}/
 data/2.5/weather?units=metric&q=${cityName}&appid=${key}`;
     const result = await fetch(url);
     const data = await result.json();
@@ -62,8 +71,10 @@ data/2.5/weather?units=metric&q=${cityName}&appid=${key}`;
 }
 
 ;// CONCATENATED MODULE: ./src/location/index.js
+
+
 async function getCurrentLocation(
-  url = "https://get.geojs.io/v1/ip/geo.json"
+  url = `https://${config.geojsURL}/v1/ip/geo.json`
 ) {
   try {
     const result = await fetch(url);
@@ -76,7 +87,7 @@ async function getCurrentLocation(
 }
 
 function drawMap(el, lat, lon, key) {
-  const url = `https://maps.googleapis.com/maps/api/staticmap?center=
+  const url = `https://${config.googleMapsURL}/maps/api/staticmap?center=
 ${lat},${lon}&zoom=12&size=400x400&key=${key}`;
   el.innerHTML = `<img src="${url}">`;
 }
