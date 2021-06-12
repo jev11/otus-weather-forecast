@@ -13,8 +13,8 @@ const owKey = process.env.OPEN_WEATHER_KEY;
 const gmKey = process.env.GOOGLE_MAPS_KEY;
 
 const historyEl = document.querySelector(".history");
-const input = document.querySelector("input");
-const button = document.querySelector("button");
+const cityInput = document.querySelector("input");
+const searchCityButton = document.querySelector("button");
 const forecastEl = document.querySelector(".forecast");
 const mapEl = document.querySelector(".map");
 
@@ -39,17 +39,17 @@ let weather;
   };
 })();
 
-button.addEventListener("click", async (ev) => {
+searchCityButton.addEventListener("click", async (ev) => {
   ev.preventDefault();
 
-  weather = await getWeather(input.value, owKey);
+  weather = await getWeather(cityInput.value, owKey);
   if (weather) {
-    keepHistory(input.value, citiesList);
+    keepHistory(cityInput.value, citiesList);
     drawWeather(forecastEl, weather);
     drawMap(mapEl, weather.coord.lat, weather.coord.lon, gmKey);
     drawHistory(historyEl, citiesList);
   }
-  input.value = "";
+  cityInput.value = "";
 
   saveHistory(citiesList);
 });
