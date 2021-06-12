@@ -17,8 +17,7 @@ function saveHistory(list) {
 }
 
 function drawHistory(el, list) {
-  const newEl = el;
-  newEl.innerHTML = `<ul>${list
+  el.innerHTML = `<ul>${list
     .map((item) => `<li class="city">${item}</li>`)
     .join("")}</ul>`;
 }
@@ -32,8 +31,7 @@ function keepHistory(city, list) {
 
 ;// CONCATENATED MODULE: ./src/weather/index.js
 function drawWeather(el, weatherInfo) {
-  const newEl = el;
-  newEl.innerHTML = `<div>
+  el.innerHTML = `<div>
     <span>
     ${weatherInfo.name}
     </span>
@@ -76,10 +74,9 @@ async function getCurrentLocation(
 }
 
 function drawMap(el, lat, lon, key) {
-  const newEl = el;
   const url = `https://maps.googleapis.com/maps/api/staticmap?center=
 ${lat},${lon}&zoom=12&size=400x400&key=${key}`;
-  newEl.innerHTML = `<img src="${url}">`;
+  el.innerHTML = `<img src="${url}">`;
 }
 
 ;// CONCATENATED MODULE: ./src/index.js
