@@ -56,6 +56,7 @@ data/2.5/weather?units=metric&q=${cityName}&appid=${key}`;
     const data = await result.json();
     return data;
   } catch (e) {
+    console.error(`Error occured. Weather could not be fetched. ${e}`);
     return null;
   }
 }
@@ -69,6 +70,7 @@ async function getCurrentLocation(
     const data = await result.json();
     return data;
   } catch (e) {
+    console.error(`Error occured. Location could not be fetched. ${e}`);
     return null;
   }
 }
