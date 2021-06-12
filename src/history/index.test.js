@@ -59,6 +59,7 @@ describe("keepHistory", () => {
     saveHistory(cities);
     expect(spy).toHaveBeenCalled();
     expect(spy).toHaveBeenCalledWith("cities", JSON.stringify(cities));
+    spy.mockRestore();
   });
 });
 
