@@ -6,7 +6,7 @@ export async function getCurrentLocation(
     const data = await result.json();
     return data;
   } catch (e) {
-    console.error(`Error occured. Location could not be fetched. ${e}`);
+    console.error(`Error occured. Data could not be fetched.`);
     return null;
   }
 }

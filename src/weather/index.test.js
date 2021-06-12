@@ -1,5 +1,16 @@
 import { drawWeather, getWeather } from ".";
 
+let error;
+beforeEach(() => {
+  error = console.error;
+  console.error = jest.fn();
+  global.fetch = jest.fn();
+});
+afterEach(() => {
+  global.fetch.mockClear();
+  console.error = error;
+});
+
 const weatherInfo = {
   coord: {
     lon: 37.6156,
@@ -85,7 +96,7 @@ describe("getWeather", () => {
   });
 
   it("returns weather for a given city", () => {
-    global.fetch = jest.fn(() =>
+    global.fetch.mockImplementationOnce(() =>
       Promise.resolve({
         json: () => Promise.resolve(weatherInfo),
       })
@@ -96,8 +107,8 @@ describe("getWeather", () => {
   });
 
   it("returns null if exception occurs", async () => {
-    global.fetch = jest.fn(() =>
-      Promise.reject(new Error("something bad happened"))
+    global.fetch.mockImplementationOnce(() =>
+      Promise.reject(new Error("Something bad happened"))
     );
     expect(await getWeather("Moscow", "abc")).toBeNull();
   });

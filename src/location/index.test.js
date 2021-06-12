@@ -1,5 +1,17 @@
 import { getCurrentLocation, drawMap } from ".";
 
+let error;
+
+beforeEach(() => {
+  error = console.error;
+  console.error = jest.fn();
+  global.fetch = jest.fn();
+});
+afterEach(() => {
+  global.fetch.mockClear();
+  console.error = error;
+});
+
 describe("getCurrentLocation", () => {
   it("is a function", () => {
     expect(getCurrentLocation).toBeInstanceOf(Function);
@@ -7,7 +19,7 @@ describe("getCurrentLocation", () => {
 
   it("returns geo data for given ip", () => {
     const reply = { city: "Moscow" };
-    global.fetch = jest.fn(() =>
+    global.fetch.mockImplementationOnce(() =>
       Promise.resolve({
         json: () => Promise.resolve({ city: "Moscow" }),
       })
@@ -18,8 +30,8 @@ describe("getCurrentLocation", () => {
   });
 
   it("returns null if exception occurs", async () => {
-    global.fetch = jest.fn(() =>
-      Promise.reject(new Error("something bad happened"))
+    fetch.mockImplementationOnce(() =>
+      Promise.reject(new Error("Something bad happened"))
     );
     expect(await getCurrentLocation()).toBeNull();
   });
