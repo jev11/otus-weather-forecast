@@ -12,6 +12,7 @@ module.exports = {
   rules: {
     "import/prefer-default-export": "off",
     "max-len": ["error", { ignoreComments: true }],
+    "no-console": ["error", { allow: ["error"] }],
   },
   plugins: ["jest"],
   ignorePatterns: ["dist/**/*.js"],
