@@ -1,4 +1,4 @@
-import { getCurrentLocation, drawMap } from "../src/location";
+import { getCurrentLocation, drawMap } from ".";
 
 describe("getCurrentLocation", () => {
   it("is a function", () => {

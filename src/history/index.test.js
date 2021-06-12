@@ -1,9 +1,4 @@
-import {
-  drawHistory,
-  loadHistory,
-  saveHistory,
-  keepHistory,
-} from "../src/history";
+import { drawHistory, loadHistory, saveHistory, keepHistory } from ".";
 
 describe("drawHistory", () => {
   let el;

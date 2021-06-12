@@ -1,4 +1,4 @@
-import { drawWeather, getWeather } from "../src/weather";
+import { drawWeather, getWeather } from ".";
 
 const weatherInfo = {
   coord: {
