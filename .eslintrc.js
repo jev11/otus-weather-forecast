@@ -13,6 +13,7 @@ module.exports = {
     "import/prefer-default-export": "off",
     "max-len": ["error", { ignoreComments: true }],
     "no-console": ["error", { allow: ["error"] }],
+    "no-param-reassign": ["error", { props: false }],
   },
   plugins: ["jest"],
   ignorePatterns: ["dist/**/*.js"],

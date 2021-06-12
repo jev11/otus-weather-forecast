@@ -12,8 +12,7 @@ export function saveHistory(list) {
 }
 
 export function drawHistory(el, list) {
-  const newEl = el;
-  newEl.innerHTML = `<ul>${list
+  el.innerHTML = `<ul>${list
     .map((item) => `<li class="city">${item}</li>`)
     .join("")}</ul>`;
 }

@@ -1,6 +1,5 @@
 export function drawWeather(el, weatherInfo) {
-  const newEl = el;
-  newEl.innerHTML = `<div>
+  el.innerHTML = `<div>
     <span>
     ${weatherInfo.name}
     </span>

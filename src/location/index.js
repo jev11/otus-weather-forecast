@@ -12,8 +12,7 @@ export async function getCurrentLocation(
 }
 
 export function drawMap(el, lat, lon, key) {
-  const newEl = el;
   const url = `https://maps.googleapis.com/maps/api/staticmap?center=
 ${lat},${lon}&zoom=12&size=400x400&key=${key}`;
-  newEl.innerHTML = `<img src="${url}">`;
+  el.innerHTML = `<img src="${url}">`;
 }
