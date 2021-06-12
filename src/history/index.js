@@ -18,8 +18,10 @@ export function drawHistory(el, list) {
 }
 
 export function keepHistory(city, list) {
-  list.unshift(city);
-  if (list.length > 10) {
-    list.pop();
+  if (!list.includes(city)) {
+    list.unshift(city);
+    if (list.length > 10) {
+      list.pop();
+    }
   }
 }

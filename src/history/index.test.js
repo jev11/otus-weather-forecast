@@ -74,5 +74,15 @@ describe("saveHistory", () => {
       keepHistory(i, list);
       expect(list.length).toBeLessThan(11);
     }
+    expect(list.length).toBe(10);
+  });
+
+  it("doesn't add double items in history", () => {
+    const list = [0, 1, 2, 3, 4, 5];
+    for (let i = 0; i <= 5; i += 1) {
+      keepHistory(i, list);
+      expect(list.length).toBe(6);
+      expect(list).toStrictEqual([0, 1, 2, 3, 4, 5]);
+    }
   });
 });
