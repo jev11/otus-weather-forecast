@@ -1,0 +1,50 @@
+{
+  "name": "otus-weather-forecast",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "make-badges": "istanbul-badges-readme",
+    "lint": "prettier --check src/**/*.js && eslint src/**/*.js",
+    "lint:fix": "prettier --write src/**/*.js && eslint --fix src/**/*.js",
+    "prepare": "husky install",
+    "build": "webpack --mode=production",
+    "serve": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jev11/otus-weather-forecast.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jev11/otus-weather-forecast/issues"
+  },
+  "homepage": "https://github.com/jev11/otus-weather-forecast#readme",
+  "devDependencies": {
+    "@babel/core": "^7.13.16",
+    "@babel/preset-env": "^7.13.15",
+    "@types/jest": "^26.0.23",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.26.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.3.6",
+    "html-webpack-plugin": "^5.3.1",
+    "husky": "^6.0.0",
+    "istanbul-badges-readme": "^1.4.0",
+    "jest": "^26.6.3",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.0",
+    "webpack": "^5.37.0",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "lint-staged": {
+    "src/**/*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
+  }
+}
