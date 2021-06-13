@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "test:badges": "jest --coverage  && jest-coverage-badges",
+    "test:badges": "jest --coverage  && jest-coverage-badges --output ./badges",
     "lint": "prettier --check src/**/*.js && eslint src/**/*.js",
     "lint:fix": "prettier --write src/**/*.js && eslint --fix src/**/*.js",
     "prepare": "husky install",

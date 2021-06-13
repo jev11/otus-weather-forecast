@@ -15,8 +15,8 @@ jobs:
       - name: Lint check
         run: |
           npm run lint
-      - name: Test and coverage
+      - name: Test and coverage report
         run: |
           npm run test
-          npm run test:badges
+          npm run test:coverage
 
