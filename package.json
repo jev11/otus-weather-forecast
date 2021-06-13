@@ -5,6 +5,8 @@
   "private": true,
   "scripts": {
     "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:badges": "jest --coverage  && jest-coverage-badges",
     "lint": "prettier --check src/**/*.js && eslint src/**/*.js",
     "lint:fix": "prettier --write src/**/*.js && eslint --fix src/**/*.js",
     "prepare": "husky install",
@@ -43,5 +45,8 @@
   "lint-staged": {
     "src/**/*.js": "eslint --cache --fix",
     "*.{js,css,md}": "prettier --write"
+  },
+  "dependencies": {
+    "jest-coverage-badges": "^1.1.2"
   }
 }
