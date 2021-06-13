@@ -1,5 +1,9 @@
 ![Build and Deploy](https://github.com/jev11/otus-weather-forecast/actions/workflows/deploy.yml/badge.svg)
 
+| Statements                                                                    | Branches                                                                  | Functions                                                                   | Lines                                                               |
+| ----------------------------------------------------------------------------- | ------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| ![Statements](https://img.shields.io/badge/statements-100%25-brightgreen.svg) | ![Branches](https://img.shields.io/badge/branches-100%25-brightgreen.svg) | ![Functions](https://img.shields.io/badge/functions-100%25-brightgreen.svg) | ![Lines](https://img.shields.io/badge/lines-100%25-brightgreen.svg) |
+
 # Otus JS basic course - Weather App homework
 
 ## How to build and deploy
